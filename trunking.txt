@@ -1,0 +1,5 @@
+Cisco Vlan 
+
+interface fa0/1
+switchport trunk encapsulation 
+switchport mode trunk 

@@ -1,0 +1,26 @@
+Private ip addresses (Routable but not allowed on the internet)
+ISP will block private ip addresses 
+
+192.168.x.x class c
+172.16.x.x class b 
+.
+.
+.
+.172.31.x.x class b 
+
+10.x.x.x class b  ap/pa 
+
+
+
+APR-Mac address for a ip address 
+
+
+Default static route : ip route 0.0.0.0 0.0.0.0 next hop ip address 
+overload nat command  
+
+
+
+static nat = switching out private ip addresses for public ip addresses 
+
+
+VLAN set up each network by VLAN 

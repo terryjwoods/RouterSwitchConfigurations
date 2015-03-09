@@ -1,0 +1,20 @@
+Task to be perform on Windows Server 2008 
+
+
+1. Configure it as a domain controller and establish as an admin domain like SU 
+2. Admin needs a dns ser
+3. Make the same server its own DNS server 
+4. forward dns to su dns servers 128.230.1.49 128.230.12.5
+5.Need all this to get dhcp server to work 
+6. windows dhcp server need to be authorize in admin 
+7. config multiple dhcp scopes for each vlan 
+8. make sure dhcp server gives ip address for default gateway and dns server 
+9. finally configure as a http server 
+
+
+
+What's different NAT router
+1. config for PAT using the interface 
+   ip nat inside source list 1 interface fa0/1 overload 
+
+2.

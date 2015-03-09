@@ -1,0 +1,7 @@
+Clear config a roter 
+
+enable mde 
+
+erase startup-config ( only use upon boot 
+
+reload (reboot router) 

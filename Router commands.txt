@@ -1,0 +1,183 @@
+
+Router>show ip route 
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    192.168.1.0/24 is directly connected, FastEthernet0/0
+C    192.168.3.0/24 is directly connected, Serial0/0/0
+
+Router(config)# 
+Router(config)#end 
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip route 
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+S    192.168.1.0/24 [1/0] via 192.168.3.1
+C    192.168.2.0/24 is directly connected, FastEthernet0/0
+C    192.168.3.0/24 is directly connected, Serial0/0/0
+
+Router#show running-config 
+Building configuration...
+
+Current configuration : 639 bytes
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ --More--
+
+
+
+
+ROUTING PROTOCOLS
+RIP
+OSPF uses bandwidth 
+VRRP (virtual routing protocol)
+IS-IS used by service providers scales to more routers 
+BGP 
+EIGRP [cisco exclusive]
+NAT 
+
+
+SAVE NVRAM CoNFIGURATION 
+TURN OF ROUTER 
+ADD ATTACHMENT
+
+
+T1 = 1.5 mbps 
+T3 = 45 mbps
+
+
+OSPF
+
+
+inverse subnet mask 
+
+
+Router>enable 
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router ospf 44
+Router(config-router)#network 192.168.1.0 0.0.0.255 area 0
+Router(config-router)#network 192.168.2.0 0.0.0.255 area 0
+Router(config-router)#
+00:02:50: %OSPF-5-ADJCHG: Process 44, Nbr 192.168.5.1 on Serial0/0/0 from LOADING to FULL, Loading Done
+Router(config-router)#network 192.168.5.0 0.0.0.255 area 0
+Router(config-router)#
+00:03:05: %OSPF-5-ADJCHG: Process 44, Nbr 192.168.5.1 on FastEthernet0/0 from LOADING to FULL, Loading Done
+
+Router(config-router)#end 
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip route 
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    192.168.1.0/24 is directly connected, FastEthernet0/1
+C    192.168.2.0/24 is directly connected, Serial0/0/0
+O    192.168.3.0/24 [110/2] via 192.168.5.1, 00:00:31, FastEthernet0/0
+C    192.168.5.0/24 is directly connected, FastEthernet0/0
+Router#
+
+
+
+
+
+Second section of the week 
+
+Router-2#debug ip rip 
+RIP protocol debugging is on
+Router-2#RIP: sending  v2 update to 224.0.0.9 via FastEthernet0/1 (172.16.3.1)
+RIP: build update entries
+      172.16.0.0/16 via 0.0.0.0, metric 2, tag 0
+      192.168.2.0/24 via 0.0.0.0, metric 1, tag 0
+RIP: sending  v2 update to 224.0.0.9 via Serial0/0/0 (192.168.2.2)
+RIP: build update entries
+      172.16.0.0/16 via 0.0.0.0, metric 1, tag 0
+RIP: received v2 update from 192.168.2.1 on Serial0/0/0
+      172.16.0.0/16 via 0.0.0.0 in 1 hops
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router-1>enable 
+Router-1#config t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router-1(config)#router rip 
+Router-1(config-router)#no auto-summary 
+Router-1(config-router)#exit
+Router-1(config)#router rip 
+Router-1(config-router)#no version 2 
+Router-1(config-router)#version 1
+Router-1(config-router)#exit 
+
+
+RIP version 1 classfull (broadcast) 
+RIP version 2  classless Smak/vlsm (multicast)
+
+
+
+
+
